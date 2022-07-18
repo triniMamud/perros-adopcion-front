@@ -77,10 +77,11 @@ position: fixed;
 }
 
 .page-header .page-logo {
+    color: #ffd7ab;
     flex: 0 0 auto;
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 0;
-    margin: 0 0.5em 0 0.3em;
+    margin: 0 0.5em 0 0.5em;
 }
 
 .page-header .page-user {
@@ -127,6 +128,7 @@ position: fixed;
     height: 100%;
     box-shadow: 0 0 0.03em rgb(0 0 0 / 25%);
     z-index: 99;
+    text-align: center;
 }
 
 #menu-drawer {
@@ -151,8 +153,12 @@ position: fixed;
     color: #ffd7ab;
 }
 
-.page-logo {
-    color: black;
+
+.menu-icon {
+    color: #ffd7ab;
+    font-size: x-large;
+    margin-inline: auto;
+    cursor: pointer;
 }
 
 .title {

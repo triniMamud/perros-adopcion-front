@@ -6,7 +6,9 @@ const Home = () => {
       <>
         <head>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet"/>
           <link rel='stylesheet' href='https://fonts.google.com/icons?selected=Material%20Icons%3Apets%3A'/>
+
           <script src="https://kit.fontawesome.com/60a077b17a.js" crossorigin="anonymous"></script>
 
         </head>                    
@@ -14,7 +16,7 @@ const Home = () => {
         <div className="page-wrapper">
           <nav data-testid="header-full" className="page-header">
             <a className="page-logo" href="/">
-              <span class="material-icons logo-img" viewBox="0 0 256 256">pets</span>
+              <span class="material-icons logo-img" viewBox="0 0 256 256">account_circle</span>
             </a>
             <h1 className="title">Perros en Adopción</h1>
             <ul data-testid="widgets-list" className="page-widgets-list"></ul>
@@ -34,9 +36,17 @@ const Home = () => {
             <input type="checkbox" className="menu-handler"/>
             <aside className="page-menu">
               <label id="menu-drawer" for="menu-handler">
-              <i class="fas fa-thumbs-up fa-5x"></i>
-
                 <span class="material-icons" viewBox="0 0 256 256">menu</span>
+              </label>
+              <label id="adopt-paw" for="adopt-paw" >
+                <div className='menu-icon'>
+                  <span class="material-symbols-outlined" >pets</span>
+                </div>
+              </label>
+              <label id="fav-pets" for="fav-pets" >
+                <div className='menu-icon'>
+                  <span class="material-symbols-outlined">pets</span>
+                </div>
               </label>
             </aside>
           </section>
