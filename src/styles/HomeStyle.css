@@ -49,6 +49,10 @@ ul, ol {
     list-style: none;
 }
 
+ul:last-child {
+    padding-top: 2em;
+}
+
 .page-wrapper {
     min-height: 100vh;
 }
@@ -59,6 +63,94 @@ ul, ol {
     display: -webkit-flex;
     display: flex;
     min-height: 100vh;
+}
+
+.page-app {
+    position: fixed;
+    width: 5em;
+    top:0;
+    height: 100vh;
+    z-index: 99;
+    background-color: #9a5833;
+    overflow:hidden;
+    transition:width .3s ease;
+    cursor:pointer;
+    box-shadow:4px 7px 10px rgba(0,0,0,.4);
+    padding-top: 5em;
+}
+
+.page-app:hover {
+    width: 17em;
+    overflow: hidden;
+    transition: width .3s ease;
+}
+
+.page-menu {
+    list-style-type: none;
+    width: max-content;
+}
+.page-menu:first-child {
+    padding-top:1rem;
+}
+
+.menu-item {
+    font-family: 'monospace';
+}
+.menu-item a {
+    position: relative;
+    display:block;
+    top:-35px;
+    padding-left:25px;
+    padding-right:15px;
+    transition:all .3s ease;
+    margin-left: 1.8em;
+    margin-right: 1em;
+    text-decoration: none;
+    color: #ffd7ab;
+    font-family: 'monospace';
+    font-size: 0.5em;
+    text-align-last: auto;
+}
+.menu-item a::after {
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius:2px;
+    opacity:0;
+    transition:all .5s ease;
+    z-index: -10;
+}
+.menu-item:hover a::after {
+    opacity:1;
+}
+
+td {
+    padding-left: 1em;
+}
+.menu-item span {
+    width:1em;
+    height:1em;
+    position: relative;
+    left:-25px;
+    cursor:pointer;
+    color: #ffd7ab;
+    padding-left: 0.6em;
+}
+
+tr {
+    line-height: normal;
+    transition:all .5s ease!important;
+
+}
+
+.settings {
+    margin-top: 26.5em;
+    border-top: solid;
+    border-color: #ffd7ab;
+    border-top-width: thin;
 }
 
 .page-header {
@@ -113,52 +205,17 @@ position: fixed;
     display: none;
 }
 
-#menu-handler + .page-menu {
-    width: 3.5em;
-    -webkit-transition: 0.2s, background-color 0.3s;
-    transition: 0.2s, background-color 0.3s;
+.menu-nav {
+    list-style-type: none;
+    color:#ffd7ab;
 }
-
-.page-menu {
-    position: absolute;
-    min-height: 100vh;
-    padding: 4.5em 0 2em;
-    background: #9a5833;
-    overflow-x: hidden;
-    height: 100%;
-    box-shadow: 0 0 0.03em rgb(0 0 0 / 25%);
-    z-index: 99;
-    text-align: center;
-}
-
-#menu-drawer {
-    top: 2em;
-    display: -webkit-flex;
-    display: flex;
-    width: 2em;
-    height: 1.5em;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    font-size: 2em;
-    -webkit-transition: -webkit-transform 0.2s;
-    transition: -webkit-transform 0.2s;
-    transition: transform 0.2s;
-    transition: transform 0.2s, -webkit-transform 0.2s;
-    cursor: pointer;
-}
-
-#menu-drawer span {
-    color: #ffd7ab;
-}
-
 
 .menu-icon {
     color: #ffd7ab;
     font-size: x-large;
     margin-inline: auto;
     cursor: pointer;
+    display: grid;
 }
 
 .title {
@@ -209,7 +266,7 @@ position: fixed;
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.3em !important;
+    font-size: 1.5em!important;
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -217,18 +274,21 @@ position: fixed;
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-  
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-  
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-  
-    /* Support for IE. */
-    font-feature-settings: 'liga';
   }
+
+.material-symbols-outlined {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 1.5em!important;
+display: inline-block;
+line-height: 1;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+direction: ltr;
+}
 
 .page-header .icon {
     vertical-align: middle;
@@ -242,3 +302,104 @@ position: fixed;
 .page-header .icon:hover {
     color: #cd966c;
 }
+
+
+   #menu{
+       font-size: 4em;
+       z-index: 99;
+       cursor: pointer;
+       text-align: center;
+       transition: all 0.5s;
+       -webkit-transition: all 0.25s;
+       position: absolute;
+       top: 1em;
+   }
+   
+   #menu:hover{
+       transform: rotate(90deg);
+       color: #FF9900;
+   }
+
+   table {
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+   }
+   
+   ul{
+       list-style: none;
+       padding: 0;
+   }
+   
+   li{
+       
+       text-transform: uppercase;
+       height: 70px;
+       line-height: 70px;
+       margin: 15px 0;
+       color: white;
+       cursor: pointer;
+       background-color: #874421;
+       font-size: 1em;
+       letter-spacing: 0.2em;
+       transition: all 0.25s;
+   }
+   
+   li:hover{
+    background:radial-gradient(circle at 94.02% 88.03%, #713112, transparent 100%);
+
+      /* letter-spacing: 0.3em;*/
+       /*font-size: 1.5em*/
+   }
+   
+   #lgMenu{
+       height: 100%;
+       top: 0;
+       overflow:hidden;
+       background-color: #cd966c;
+       box-shadow: 5px 5px 10px grey;
+      /* position: absolute;*/
+       z-index: 11;
+       opacity: 1;
+       position: absolute;
+       -webkit-transition: all 1s linear;
+       -moz-transition: all 1s linear;
+       -o-transition: all 1s linear;
+       transition: all 0.25s linear;
+   }
+
+   #lgMenu.enter{
+    opacity: 1;
+    left: 0;
+    width: auto;
+    transition: all 0.25s linear;
+
+}
+   
+   #exit{
+       position: absolute;
+       right: 10px;
+       padding: 0px;
+       top: 1em;
+       font-size: 4em;
+       color: white;
+       font-weight: 500;
+       cursor: pointer;
+       transition: all 0.25s;
+       -webkit-transition: all 0.25s;
+       z-index: 99;
+       transition: all 0.5s linear;
+
+   }
+   #exit:hover{
+       color:#FF9900;
+   }
+   
+
+
+   .hide-menu {
+        opacity: 0;
+   }
+
+    .menu-symbol {
+       margin-top: 5em;
+   }
